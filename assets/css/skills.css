@@ -1,0 +1,143 @@
+.skills-main {
+    margin-left: 250px; 
+    padding: 40px 20px;
+    font-family: 'Poppins', sans-serif;
+  }
+  
+  .skills-main h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: #2c3e50;
+  }
+  
+  .success {
+    background-color: #e0ffe3;
+    color: #1a7e32;
+    border: 1px solid #a7f0b2;
+    padding: 10px 15px;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    width: 100%;
+    max-width: 600px;
+  }
+  
+  .errors {
+    background-color: #ffe6e6;
+    color: #b30000;
+    border: 1px solid #ffb3b3;
+    padding: 10px 15px;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    width: 100%;
+    max-width: 600px;
+  }
+  
+  .skills-form {
+    width: 100%;
+    max-width: 600px;
+    background: #fff;
+    border-radius: 12px;
+    padding: 30px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  .skills-form label {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    font-weight: 500;
+    color: #444;
+  }
+  
+  .skills-form input,
+  .skills-form select,
+  .skills-form textarea {
+    width: 100%;
+    padding: 10px 12px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 15px;
+  }
+  
+  .skills-form input:focus,
+  .skills-form select:focus,
+  .skills-form textarea:focus {
+    border-color: #3498db;
+    box-shadow: 0 0 5px rgba(52,152,219,0.3);
+    outline: none;
+  }
+  
+  .btn {
+    background-color: #3498db;
+    color: white;
+    padding: 12px;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+  }
+  
+  .btn:hover {
+    background-color: #2980b9;
+    transform: translateY(-2px);
+  }
+  
+  .add-btn {
+    display: inline-block;
+    margin-bottom: 15px;
+  }
+  
+  .skills-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+  }
+  
+  .skills-table th,
+  .skills-table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+  }
+  
+  .skills-table th {
+    background-color: #f4f6f9;
+    font-weight: 600;
+  }
+  
+  .edit-btn, .delete-btn {
+    padding: 5px 10px;
+    border-radius: 6px;
+    color: white;
+    text-decoration: none;
+    margin-right: 5px;
+    font-size: 14px;
+  }
+  
+  .edit-btn {
+    background-color: #3498db;
+  }
+  
+  .edit-btn:hover {
+    background-color: #2980b9;
+  }
+  
+  .delete-btn {
+    background-color: #e74c3c;
+  }
+  
+  .delete-btn:hover {
+    background-color: #c0392b;
+  }
+  
+  @media (max-width: 768px) {
+    .skills-main {
+      margin-left: 0;
+      padding: 20px;
+    }
+  }
+  

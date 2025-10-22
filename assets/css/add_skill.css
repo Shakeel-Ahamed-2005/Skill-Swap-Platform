@@ -1,0 +1,217 @@
+.add-skill-main {
+    margin-left: 250px; 
+    padding: 40px 20px;
+    min-height: 100vh;
+    font-family: "Poppins", sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #f4f6f9;
+}
+
+/* -----------------------------
+   HEADINGS
+----------------------------- */
+.add-skill-main h2 {
+    font-size: 2rem;
+    color: #2c3e50;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+/* -----------------------------
+   FORM STYLING
+----------------------------- */
+.add-skill-form {
+    width: 100%;
+    max-width: 600px;
+    background: #fff;
+    border-radius: 12px;
+    padding: 30px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-bottom: 40px;
+}
+
+.add-skill-form label {
+    display: flex;
+    flex-direction: column;
+    font-weight: 500;
+    color: #444;
+}
+
+.add-skill-form input[type="text"],
+.add-skill-form select,
+.add-skill-form textarea {
+    width: 100%;
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    font-size: 15px;
+    resize: none;
+    margin-top: 5px;
+}
+
+.add-skill-form input:focus,
+.add-skill-form select:focus,
+.add-skill-form textarea:focus {
+    border-color: #3498db;
+    outline: none;
+}
+
+/* -----------------------------
+   RADIO BUTTONS
+----------------------------- */
+.skill-type {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 10px;
+}
+
+.skill-type label {
+    display: flex;
+    align-items: center;
+    font-weight: 500;
+}
+
+.skill-type input[type="radio"] {
+    margin-right: 5px;
+}
+
+/* -----------------------------
+   BUTTONS
+----------------------------- */
+.btn {
+    background-color: #3498db;
+    color: white;
+    padding: 12px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+    text-align: center;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.btn:hover {
+    background-color: #2980b9;
+    transform: translateY(-1px);
+}
+
+/* -----------------------------
+   SUCCESS & ERROR MESSAGES
+----------------------------- */
+.success {
+    background-color: #e0ffe3;
+    color: #1a7e32;
+    padding: 10px 15px;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    max-width: 600px;
+    text-align: center;
+}
+
+.errors {
+    background-color: #ffe6e6;
+    color: #b30000;
+    padding: 10px 15px;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    max-width: 600px;
+    text-align: center;
+}
+
+/* -----------------------------
+   MY SKILLS TABLE
+----------------------------- */
+.skills-table {
+    width: 100%;
+    max-width: 800px;
+    border-collapse: collapse;
+    margin-top: 20px;
+    background: #fff;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+}
+
+.skills-table th,
+.skills-table td {
+    padding: 12px 15px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+.skills-table th {
+    background-color: #3498db;
+    color: white;
+}
+
+.skills-table tr:hover {
+    background-color: #f1f1f1;
+}
+
+.edit-btn,
+.delete-btn {
+    padding: 6px 10px;
+    border-radius: 6px;
+    color: white;
+    text-decoration: none;
+    font-size: 14px;
+    margin-right: 5px;
+}
+
+.edit-btn {
+    background-color: #2980b9;
+}
+
+.edit-btn:hover {
+    background-color: #1f5f8b;
+}
+
+.delete-btn {
+    background-color: #e74c3c;
+}
+
+.delete-btn:hover {
+    background-color: #c0392b;
+}
+
+/* -----------------------------
+   Table badges (Type column) 
+----------------------------- */
+.skills-table .skill-type {
+    display: inline-flex;
+    align-items: center;       
+    justify-content: center;  
+    padding: 3px 10px;
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: #fff;
+    border-radius: 12px;
+    line-height: 1;
+    height: 28px;              
+    white-space: nowrap;
+}
+.skills-table .skill-type.offer {
+    background-color: #4caf50;
+}
+.skills-table .skill-type.want {
+    background-color: #3498db;
+}
+
+/* -----------------------------
+   RESPONSIVE DESIGN
+----------------------------- */
+@media (max-width: 768px) {
+    .add-skill-main {
+        margin-left: 0;
+        padding: 20px;
+    }
+
+    .skills-table {
+        font-size: 14px;
+    }
+}

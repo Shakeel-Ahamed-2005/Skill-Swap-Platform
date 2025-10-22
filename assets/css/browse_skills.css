@@ -1,0 +1,144 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background: #f4f6f8;
+    color: #1a1a1a;
+  }
+  
+  a {
+    text-decoration: none;
+  }
+  
+  section {
+    padding: 60px 20px;
+    text-align: center;
+  }
+  
+  /* Browse Skills Section */
+  .browse-skills {
+    background: #ffffff;
+    min-height: 80vh;
+  }
+  
+  .browse-skills h1 {
+    font-size: 2.5rem;
+    color: #0a1f44;
+    margin-bottom: 10px;
+  }
+  
+  .browse-skills p {
+    color: #444;
+    font-size: 1.1rem;
+    margin-bottom: 40px;
+  }
+  
+  /* Search Bar */
+  .search-bar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 50px;
+  }
+  
+  .search-bar input {
+    width: 60%;
+    max-width: 500px;
+    padding: 12px 15px;
+    border: 2px solid #ccc;
+    border-radius: 25px;
+    font-size: 1rem;
+    outline: none;
+    transition: 0.3s;
+  }
+  
+  .search-bar input:focus {
+    border-color: #23509e;
+    box-shadow: 0 0 6px rgba(35, 80, 158, 0.3);
+  }
+  
+  .search-bar .btn {
+    background: #23509e;
+    color: #ffffff;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 30px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+  }
+  
+  .search-bar .btn:hover {
+    background: #1b3f7e;
+  }
+  
+  /* Skill Grid */
+  .skills-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 25px;
+  }
+  
+  .skill-card {
+    background: #ffffff;
+    width: 250px;
+    padding: 25px;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    transition: 0.3s;
+    text-align: center;
+  }
+  
+  .skill-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+  }
+  
+  .skill-card .icon {
+    font-size: 2rem;
+    margin-bottom: 15px;
+  }
+  
+  .skill-card h3 {
+    color: #0a1f44;
+    margin-bottom: 10px;
+  }
+  
+  .skill-card p {
+    color: #555;
+    font-size: 0.95rem;
+    margin-bottom: 15px;
+  }
+  
+  .skill-card .btn.small {
+    background: #23509e;
+    color: #ffffff;
+    padding: 8px 18px;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: bold;
+    transition: 0.3s;
+  }
+  
+  .skill-card .btn.small:hover {
+    background: #1b3f7e;
+  }
+  
+  /* Responsive */
+  @media (max-width: 768px) {
+    .search-bar {
+      flex-direction: column;
+    }
+  
+    .search-bar input {
+      width: 90%;
+    }
+  
+    .skills-grid {
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+  

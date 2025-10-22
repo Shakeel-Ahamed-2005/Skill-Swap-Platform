@@ -1,0 +1,347 @@
+/* ===================================
+   GLOBAL STYLES
+=================================== */
+body {
+  margin: 0;
+  font-family: "Poppins", sans-serif;
+  background-color: #f8fafc;
+  color: #222;
+  line-height: 1.6;
+}
+
+h1, h2, h3 {
+  color: #1e293b;
+  margin-bottom: 10px;
+}
+
+p {
+  color: #475569;
+  margin-bottom: 15px;
+}
+
+section {
+  padding: 80px 10%;
+  text-align: center;
+}
+
+img {
+  max-width: 100%;
+  border-radius: 12px;
+}
+
+/* ===================================
+   HERO SECTION
+=================================== */
+.hero {
+  background: linear-gradient(135deg, #0077b6, #00b4d8);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 100px 10%;
+}
+
+.hero-container {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 50px;
+  max-width: 1200px;
+}
+
+.hero-left img {
+  width: 450px;
+  animation: float 4s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+.hero-right {
+  max-width: 500px;
+  text-align: left;
+}
+
+.hero-right h1 {
+  font-size: 2.8rem;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+.hero-right p {
+  font-size: 1.1rem;
+  margin-bottom: 30px;
+}
+
+.hero-buttons {
+  display: flex;
+  gap: 20px;
+}
+
+.btn {
+  padding: 12px 25px;
+  border-radius: 30px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.btn.primary {
+  background-color: #fff;
+  color: #0077b6;
+}
+
+.btn.primary:hover {
+  background-color: #caf0f8;
+}
+
+.btn.secondary {
+  border: 2px solid #fff;
+  color: #fff;
+}
+
+.btn.secondary:hover {
+  background-color: #023e8a;
+  border-color: #023e8a;
+}
+
+/* ===================================
+   BENEFITS SECTION
+=================================== */
+.benefits {
+  background-color: #fff;
+}
+
+.benefits h2 {
+  font-size: 2rem;
+  margin-bottom: 40px;
+}
+
+.benefit-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 30px;
+  margin-top: 30px;
+}
+
+.benefit-card {
+  background: #f1f5f9;
+  border-radius: 16px;
+  padding: 30px;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+}
+
+.benefit-card:hover {
+  transform: translateY(-8px);
+  background-color: #e0f7fa;
+}
+
+.benefit-card img {
+  width: 60px;
+  margin-bottom: 20px;
+}
+
+/* ===================================
+   HOW IT WORKS
+=================================== */
+.how-it-works {
+  background-color: #f8fafc;
+}
+
+.how-it-works h2 {
+  font-size: 2rem;
+  margin-bottom: 40px;
+}
+
+.steps {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+  margin-top: 30px;
+}
+
+.step {
+  background: #fff;
+  border-radius: 16px;
+  padding: 30px;
+  width: 300px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+  transition: all 0.3s ease;
+}
+
+.step:hover {
+  transform: translateY(-8px);
+}
+
+.step img {
+  width: 80px;
+  margin-bottom: 15px;
+}
+
+/* ===================================
+   FEATURED SKILLS (3 per row)
+=================================== */
+.featured-skills {
+  background: #fff;
+  padding: 80px 10%;
+  text-align: center;
+}
+
+.featured-skills h2 {
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+
+.section-subtitle {
+  font-size: 1rem;
+  color: #64748b;
+  margin-bottom: 40px;
+}
+
+/* Force 3 columns on desktop */
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  justify-items: center;
+}
+
+/* Skill item styling */
+.skill-item {
+  background: #f1f5f9;
+  border-radius: 16px;
+  padding: 30px 20px;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  width: 90%;
+  max-width: 280px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+
+.skill-item:hover {
+  background-color: #caf0f8;
+  transform: translateY(-8px);
+}
+
+.skill-item img {
+  width: 80px;
+  margin-bottom: 15px;
+}
+
+/* Responsive design */
+@media (max-width: 992px) {
+  .skills-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .skills-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ===================================
+   TESTIMONIALS (Centered Square Cards)
+=================================== */
+.testimonials {
+  background-color: #f8fafc;
+  padding: 80px 10%;
+  text-align: center;
+}
+
+.testimonials h2 {
+  font-size: 2rem;
+  margin-bottom: 50px;
+}
+
+.testimonial-slider {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+}
+
+.testimonial {
+  background: #fff;
+  width: 280px;
+  height: 180px;
+  border-radius: 20px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.3s ease;
+}
+
+.testimonial:hover {
+  transform: translateY(-8px);
+  background-color: #e0f7fa;
+}
+
+.testimonial p {
+  font-style: italic;
+  color: #334155;
+  margin-bottom: 15px;
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+.testimonial h4 {
+  color: #0077b6;
+  font-weight: 600;
+  margin-top: auto;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .testimonial {
+    width: 100%;
+    max-width: 320px;
+    height: auto;
+    padding: 25px;
+  }
+}
+
+/* ===================================
+   RESPONSIVE DESIGN
+=================================== */
+@media (max-width: 992px) {
+  .hero-container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .hero-right {
+    text-align: center;
+  }
+
+  .hero-buttons {
+    justify-content: center;
+  }
+
+  .hero-left img {
+    width: 350px;
+  }
+}
+
+@media (max-width: 600px) {
+  section {
+    padding: 60px 5%;
+  }
+
+  .hero-right h1 {
+    font-size: 2rem;
+  }
+
+  .step, .benefit-card, .skill-item {
+    width: 100%;
+  }
+}
