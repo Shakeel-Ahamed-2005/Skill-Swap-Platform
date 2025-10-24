@@ -5,7 +5,6 @@ require 'includes/config.php';
 $err = '';
 $success = '';
 
-// Show success if redirected after registration
 if (isset($_GET['registered']) && $_GET['registered'] == 1) {
     $success = "Registration successful! You can now log in.";
 }
@@ -34,36 +33,46 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 }
 ?>
 
-<h2>Login</h2>
+<!-- ==============================
+     LOGIN HERO
+=============================== -->
+<section class="login-hero">
+  <div class="login-hero-content">
+    <h1>Welcome Back</h1>
+    <p>Log in to access your SkillSwap account and connect with learners & experts.</p>
+  </div>
+</section>
 
-<?php if ($success): ?>
-  <div class="success"><?php echo htmlspecialchars($success); ?></div>
-<?php endif; ?>
+<!-- ==============================
+     LOGIN FORM
+=============================== -->
+<div class="login-container">
+    <?php if ($success): ?>
+      <div class="success"><?php echo htmlspecialchars($success); ?></div>
+    <?php endif; ?>
 
-<?php if ($err): ?>
-  <div class="errors"><?php echo htmlspecialchars($err); ?></div>
-<?php endif; ?>
+    <?php if ($err): ?>
+      <div class="errors"><?php echo htmlspecialchars($err); ?></div>
+    <?php endif; ?>
 
-<form method="post" class="form" autocomplete="off">
-  <label>
-    Email
-    <input type="email" name="email" 
-           value="<?php echo htmlspecialchars($_POST['email'] ?? ''); ?>" 
-           required autocomplete="off">
-  </label>
+    <form method="post" class="login-form" autocomplete="off">
+    <label>
+        Email
+        <input type="email" name="email" required autocomplete="off" placeholder="Enter your email">
+    </label>
 
-  <label>
-    Password
-    <input type="password" name="password" required autocomplete="new-password">
-  </label>
+    <label>
+        Password
+        <input type="password" name="password" required autocomplete="new-password" placeholder="Enter your password">
+    </label>
 
-  <button type="submit" class="btn">Login</button>
+    <button type="submit" class="btn">Login</button>
 </form>
 
-<p>Don't have an account? <a href="/skillswap/register.php">Register</a></p>
+
+    <p class="register-link">Don't have an account? <a href="/skillswap/register.php">Register</a></p>
+</div>
 
 <?php include 'includes/footer.php'; ?>
-
-<link rel="stylesheet" href="/skillswap/assets/css/index.css">
-<link rel="stylesheet" href="/skillswap/assets/css/footer.css"> 
 <link rel="stylesheet" href="/skillswap/assets/css/login.css">
+<link rel="stylesheet" href="/skillswap/assets/css/footer.css">

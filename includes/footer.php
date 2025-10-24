@@ -3,7 +3,7 @@
 
 <footer>
   <div class="container footer-container">
-    
+
     <!-- Top Section -->
     <div class="footer-top">
       <!-- Brand -->
@@ -35,10 +35,10 @@
       <div class="footer-column">
         <h4>Support</h4>
         <ul>
-          <li><a href="#">Help Center</a></li>
-          <li><a href="#">Terms of Service</a></li>
-          <li><a href="#">Privacy Policy</a></li>
-          <li><a href="#">FAQs</a></li>
+          <li><a href="/skillswap/help.php">Help Center</a></li>
+          <li><a href="/skillswap/service.php">Terms of Service</a></li>
+          <li><a href="/skillswap/privacy.php">Privacy Policy</a></li>
+          <li><a href="/skillswap/faq.php">FAQs</a></li>
         </ul>
       </div>
 
@@ -47,10 +47,10 @@
         <h4>Follow Us</h4>
         <div class="social-icons">
           <a href="#"><i class="fab fa-facebook-f"></i></a>
-          <a href="#"><i class="fab fa-twitter"></i></a>
           <a href="#"><i class="fab fa-linkedin-in"></i></a>
           <a href="#"><i class="fab fa-instagram"></i></a>
-          <a href="#"><i class="fab fa-youtube"></i></a>
+          <a href="https://github.com/Shakeel-Ahamed-2005" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
+          <a href="mailto:ahamedskl2005@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
         </div>
       </div>
     </div>

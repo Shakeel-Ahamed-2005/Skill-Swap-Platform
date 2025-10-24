@@ -1,0 +1,237 @@
+/* ==============================
+   GENERAL STYLING
+============================== */
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f9f9f9;
+    margin: 0;
+    padding: 0;
+    color: #333;
+  }
+  
+  h2, h3, h4 {
+    margin: 0;
+  }
+  
+  a {
+    text-decoration: none;
+    color: inherit;
+  }
+  
+  /* ==============================
+     BEST MATCHES MAIN CONTAINER
+  ============================== */
+  .best-matches-main {
+    margin-left: 260px;
+    padding: 60px 5%;
+    min-height: 100vh;
+    transition: margin-left 0.3s ease;
+  }
+
+  .best-matches-main h2 {
+    font-size: 28px;
+    font-weight: 600;
+    margin-bottom: 30px; /* Adjust space below the heading */
+}
+  
+  .matches-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 25px;
+  }
+  
+  .match-card {
+    background-color: #fff;
+    border-radius: 15px;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+    overflow: hidden;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .match-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.12);
+  }
+  
+  .match-avatar {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid #086375;
+    margin-bottom: 15px;
+  }
+  
+  .match-card h3 {
+    font-size: 20px;
+    margin-bottom: 10px;
+  }
+  
+  .match-bio {
+    font-size: 14px;
+    color: #555;
+    margin-bottom: 10px;
+  }
+  
+  .match-skills {
+    font-size: 13px;
+    color: #333;
+    margin-bottom: 15px;
+  }
+  
+  .viewProfileBtn {
+    border: none;
+    background-color: #086375;
+    color: #fff;
+    padding: 12px;
+    width: 100%;
+    cursor: pointer;
+    font-weight: 500;
+    font-size: 14px;
+    border-radius: 8px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .viewProfileBtn:hover {
+    background-color: #185b68;
+  }
+  
+  /* ==============================
+     MODAL STYLING
+  ============================== */
+  .modal {
+    display: none;
+    position: fixed;
+    z-index: 9999;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow-y: auto;
+    background-color: rgba(0,0,0,0.6);
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+  }
+  
+  .modal-content {
+    background-color: #fff;
+    border-radius: 15px;
+    max-width: 600px;
+    width: 100%;
+    padding: 25px;
+    position: relative;
+    animation: fadeIn 0.3s ease-in-out;
+    text-align: center;
+  }
+  
+  .modal-content .close {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    font-size: 25px;
+    cursor: pointer;
+    color: #333;
+  }
+  
+  .modal-avatar {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid #086375;
+    margin-bottom: 15px;
+  }
+  
+  .modal-body h2 {
+    margin-bottom: 10px;
+    font-size: 22px;
+  }
+  
+  .modal-body p {
+    font-size: 14px;
+    color: #555;
+    margin: 5px 0;
+  }
+  
+  .contact-options {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+  }
+  
+  .contact-btn, .swap-btn {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    padding: 10px 20px;
+    border-radius: 30px;
+    border: none;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .contact-btn {
+    background-color: #4CAF50; /* Green */
+    color: #fff;
+  }
+  
+  .contact-btn:hover {
+    background-color: #45a049;
+  }
+  
+  .contact-btn a {
+    color: #fff;
+    text-decoration: none;
+  }
+  
+  .swap-btn {
+    background-color: #f59e0b; /* Amber */
+    color: #fff;
+  }
+  
+  .swap-btn:hover {
+    background-color: #b45309;
+  }
+  
+  /* ==============================
+     ANIMATIONS
+  ============================== */
+  @keyframes fadeIn {
+    from { opacity: 0; transform: scale(0.95); }
+    to { opacity: 1; transform: scale(1); }
+  }
+  
+  /* ==============================
+     RESPONSIVE
+  ============================== */
+  @media (max-width: 768px) {
+    .best-matches-main {
+        margin-left: 0;
+        padding: 20px;
+    }
+  
+    .matches-container {
+        grid-template-columns: 1fr;
+    }
+  }
+
+/* Footer */
+footer {
+  margin-left: 260px;
+  padding: 60px 5%;
+  background: linear-gradient(135deg, #022b40, #086375);
+  color: #fff;
+  font-family: "Poppins", sans-serif;
+  transition: margin-left 0.3s ease;
+}
+
+.sidebar.collapsed~footer {
+  margin-left: 70px;
+}

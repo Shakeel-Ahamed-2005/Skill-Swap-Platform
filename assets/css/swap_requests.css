@@ -1,0 +1,135 @@
+/* -----------------------------
+   DASHBOARD MAIN
+----------------------------- */
+.dashboard-main {
+    margin-left: 260px;
+    padding: 60px 5%;
+    min-height: 100vh;
+    background: #f5f7fa;
+    font-family: "Poppins", sans-serif;
+  }
+  
+  /* -----------------------------
+     HEADER
+  ----------------------------- */
+  .dashboard-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+  }
+  
+  .dashboard-header h2 {
+    font-size: 28px;
+    font-weight: 600;
+    color: #333;
+  }
+  
+  /* -----------------------------
+     SWAP REQUEST CARDS
+  ----------------------------- */
+  .dashboard-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
+    margin-bottom: 40px;
+  }
+  
+  .dashboard-card {
+    background: white;
+    border-radius: 16px;
+    padding: 25px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease;
+  }
+  
+  .dashboard-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.08);
+  }
+  
+  .card-icon {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: #eef2ff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 15px auto;
+    color: #2563eb;
+    font-size: 28px;
+  }
+  
+  .dashboard-card h3 {
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 10px;
+    text-align: center;
+  }
+  
+  .dashboard-card p {
+    font-size: 14px;
+    color: #555;
+    margin-bottom: 8px;
+    text-align: center;
+  }
+  
+  .dashboard-card .card-actions {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 15px;
+  }
+  
+  .btn-accept {
+    background-color: #16a34a;
+    color: white;
+    border: none;
+    padding: 8px 18px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+  }
+  
+  .btn-accept:hover {
+    background-color: #15803d;
+  }
+  
+  .btn-reject {
+    background-color: #dc2626;
+    color: white;
+    border: none;
+    padding: 8px 18px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+  }
+  
+  .btn-reject:hover {
+    background-color: #b91c1c;
+  }
+  
+  /* -----------------------------
+     RESPONSIVE
+  ----------------------------- */
+  @media (max-width: 768px) {
+    .dashboard-main {
+      margin-left: 0;
+      padding: 20px;
+    }
+  }
+  
+  /* Footer */
+footer {
+  margin-left: 260px;
+  padding: 60px 5%;
+  background: linear-gradient(135deg, #022b40, #086375);
+  color: #fff;
+  font-family: "Poppins", sans-serif;
+  transition: margin-left 0.3s ease;
+}
+
+.sidebar.collapsed~footer {
+  margin-left: 70px;
+}

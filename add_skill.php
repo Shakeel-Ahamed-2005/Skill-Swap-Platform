@@ -15,7 +15,7 @@ $errors = [];
 $success = '';
 
 // Categories
-$categories = ['Technology','Art','Language','Music','Cooking','Other'];
+$categories = ['Technology', 'Art', 'Language', 'Music', 'Cooking', 'Other'];
 
 /* -----------------------------
    HANDLE FORM SUBMISSION (ADD / EDIT)
@@ -30,7 +30,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     // Validation
     if (!$skill_name) $errors[] = "Skill name is required.";
     if (!$skill_category) $errors[] = "Please choose a category.";
-    if (!in_array($skill_type,['offer','want'])) $errors[] = "Please specify skill type.";
+    if (!in_array($skill_type, ['Offer', 'Want'])) $errors[] = "Please specify skill type.";
     if (!$skill_description) $errors[] = "Please provide a description.";
 
     if (!$errors) {
@@ -95,7 +95,7 @@ $stmt->close();
 
         <label>
             Skill Name
-            <input type="text" name="skill_name" id="skill_name" placeholder="e.g., Graphic Design" value="">
+            <input type="text" name="skill_name" id="skill_name" placeholder="e.g., Graphic Design" value="<?php echo htmlspecialchars($_POST['skill_name'] ?? ''); ?>">
         </label>
 
         <label>
@@ -103,23 +103,35 @@ $stmt->close();
             <select name="skill_category" id="skill_category">
                 <option value="">Select category</option>
                 <?php foreach ($categories as $cat): ?>
-                    <option value="<?php echo $cat; ?>"><?php echo $cat; ?></option>
+                    <option value="<?php echo $cat; ?>" <?php if (isset($_POST['skill_category']) && $_POST['skill_category'] == $cat) echo 'selected'; ?>><?php echo $cat; ?></option>
                 <?php endforeach; ?>
             </select>
         </label>
 
         <div class="skill-type">
-            <label><input type="radio" name="skill_type" value="offer" id="type_offer"> I Offer This Skill</label>
-            <label><input type="radio" name="skill_type" value="want" id="type_want"> I Want to Learn This Skill</label>
+            <label>
+                <input type="radio" name="skill_type" value="Offer" <?php if (isset($_POST['skill_type']) && $_POST['skill_type'] == 'Offer') echo 'checked'; ?>>
+                I Offer This Skill
+            </label>
         </div>
+        <div class="skill-type">
+            <label>
+                <input type="radio" name="skill_type" value="Want" <?php if (isset($_POST['skill_type']) && $_POST['skill_type'] == 'Want') echo 'checked'; ?>>
+                I Want to Learn This Skill
+            </label>
+        </div>
+
+
 
         <label>
             Description
-            <textarea name="skill_description" id="skill_description" rows="4"></textarea>
+            <textarea name="skill_description" id="skill_description" rows="4"><?php echo htmlspecialchars($_POST['skill_description'] ?? ''); ?></textarea>
         </label>
 
-        <button type="submit" class="btn" id="submitBtn">Add Skill</button>
-        <button type="button" class="btn cancel-btn" onclick="resetForm()">Cancel</button>
+        <div class="btn-row">
+            <button type="submit" class="btn" id="submitBtn">Add Skill</button>
+            <button type="button" class="btn cancel-btn" onclick="resetForm()">Cancel</button>
+        </div>
     </form>
 
     <h2>My Skills</h2>
@@ -142,11 +154,10 @@ $stmt->close();
                         <td class="skill-name"><?php echo htmlspecialchars($skill['skill_name']); ?></td>
                         <td class="skill-category"><?php echo htmlspecialchars($skill['skill_category']); ?></td>
                         <td>
-  <span class="skill-type <?php echo $skill['skill_type']; ?>">
-    <?php echo htmlspecialchars($skill['skill_type']); ?>
-  </span>
-</td>
-
+                            <span class="skill-type <?php echo $skill['skill_type']; ?>">
+                                <?php echo htmlspecialchars($skill['skill_type']); ?>
+                            </span>
+                        </td>
                         <td class="skill-description"><?php echo htmlspecialchars($skill['skill_description']); ?></td>
                         <td>
                             <button class="btn edit-btn" onclick="openEditForm(<?php echo $skill['id']; ?>)">Edit</button>
@@ -166,25 +177,26 @@ $stmt->close();
 <link rel="stylesheet" href="assets/css/footer.css">
 
 <script>
-function openEditForm(skillId){
-    const row = document.querySelector(`tr[data-id='${skillId}']`);
-    document.getElementById('skill_id').value = skillId;
-    document.getElementById('skill_name').value = row.querySelector('.skill-name').textContent;
-    document.getElementById('skill_category').value = row.querySelector('.skill-category').textContent;
-    const type = row.querySelector('.skill-type').textContent;
-    document.getElementById('type_offer').checked = (type==='offer');
-    document.getElementById('type_want').checked = (type==='want');
-    document.getElementById('skill_description').value = row.querySelector('.skill-description').textContent;
-    document.getElementById('submitBtn').textContent = 'Update Skill';
+    function openEditForm(skillId) {
+        const row = document.querySelector(`tr[data-id='${skillId}']`);
+        document.getElementById('skill_id').value = skillId;
+        document.getElementById('skill_name').value = row.querySelector('.skill-name').textContent;
+        document.getElementById('skill_category').value = row.querySelector('.skill-category').textContent;
+        const type = row.querySelector('.skill-type').textContent.trim();
+        document.querySelectorAll('.skill-type input').forEach(radio => {
+            radio.checked = (radio.value === type);
+        });
+        document.getElementById('skill_description').value = row.querySelector('.skill-description').textContent;
+        document.getElementById('submitBtn').textContent = 'Update Skill';
+        document.getElementById('addSkillForm').scrollIntoView({
+            behavior: 'smooth',
+            block: 'start'
+        });
+    }
 
-    // Smooth scroll to the form
-    document.getElementById('addSkillForm').scrollIntoView({ behavior: 'smooth', block: 'start' });
-}
-
-
-function resetForm(){
-    document.getElementById('skill_id').value = '';
-    document.getElementById('addSkillForm').reset();
-    document.getElementById('submitBtn').textContent = 'Add Skill';
-}
+    function resetForm() {
+        document.getElementById('skill_id').value = '';
+        document.getElementById('addSkillForm').reset();
+        document.getElementById('submitBtn').textContent = 'Add Skill';
+    }
 </script>

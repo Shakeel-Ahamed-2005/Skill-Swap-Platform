@@ -1,6 +1,3 @@
-/* ===================================
-   GLOBAL STYLES
-=================================== */
 body {
   margin: 0;
   font-family: "Poppins", sans-serif;
@@ -9,7 +6,9 @@ body {
   line-height: 1.6;
 }
 
-h1, h2, h3 {
+h1,
+h2,
+h3 {
   color: #1e293b;
   margin-bottom: 10px;
 }
@@ -56,8 +55,15 @@ img {
 }
 
 @keyframes float {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-10px); }
+
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-10px);
+  }
 }
 
 .hero-right {
@@ -132,7 +138,7 @@ img {
   border-radius: 16px;
   padding: 30px;
   transition: all 0.3s ease;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
 }
 
 .benefit-card:hover {
@@ -170,7 +176,7 @@ img {
   border-radius: 16px;
   padding: 30px;
   width: 300px;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
   transition: all 0.3s ease;
 }
 
@@ -203,7 +209,6 @@ img {
   margin-bottom: 40px;
 }
 
-/* Force 3 columns on desktop */
 .skills-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -211,7 +216,6 @@ img {
   justify-items: center;
 }
 
-/* Skill item styling */
 .skill-item {
   background: #f1f5f9;
   border-radius: 16px;
@@ -246,9 +250,9 @@ img {
   }
 }
 
-/* ===================================
-   TESTIMONIALS (Centered Square Cards)
-=================================== */
+/* ==============
+   TESTIMONIALS
+=================== */
 .testimonials {
   background-color: #f8fafc;
   padding: 80px 10%;
@@ -272,7 +276,7 @@ img {
   width: 280px;
   height: 180px;
   border-radius: 20px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
   padding: 30px;
   display: flex;
   flex-direction: column;
@@ -341,7 +345,9 @@ img {
     font-size: 2rem;
   }
 
-  .step, .benefit-card, .skill-item {
+  .step,
+  .benefit-card,
+  .skill-item {
     width: 100%;
   }
 }

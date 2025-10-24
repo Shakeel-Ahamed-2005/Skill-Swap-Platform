@@ -51,40 +51,51 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 }
 ?>
 
-<h2>Create an Account</h2>
+<!-- ==============================
+     REGISTER HERO
+=============================== -->
+<section class="register-hero">
+    <div class="register-hero-content">
+        <h1>Create Your Account</h1>
+        <p>Join SkillSwap today and start connecting with learners and experts!</p>
+    </div>
+</section>
 
-<?php if(!empty($errors)): ?>
-  <div class="errors"><?php echo implode('<br>', array_map('htmlspecialchars',$errors)); ?></div>
-<?php endif; ?>
+<!-- ==============================
+     REGISTER FORM
+=============================== -->
+<div class="register-container">
+    <?php if(!empty($errors)): ?>
+        <div class="errors"><?php echo implode('<br>', array_map('htmlspecialchars',$errors)); ?></div>
+    <?php endif; ?>
 
-<form method="post" class="form" autocomplete="off">
-  <label>
-    Full Name
-    <input type="text" name="name" value="<?php echo htmlspecialchars($_POST['name'] ?? ''); ?>" required>
-  </label>
+    <form method="post" class="register-form" autocomplete="off">
+        <label>
+            Full Name
+            <input type="text" name="name" value="<?php echo htmlspecialchars($_POST['name'] ?? ''); ?>" required>
+        </label>
 
-  <label>
-    Email
-    <input type="email" name="email" value="<?php echo htmlspecialchars($_POST['email'] ?? ''); ?>" required>
-  </label>
+        <label>
+            Email
+            <input type="email" name="email" value="<?php echo htmlspecialchars($_POST['email'] ?? ''); ?>" required>
+        </label>
 
-  <label>
-    Password
-    <input type="password" name="password" required autocomplete="new-password">
-  </label>
+        <label>
+            Password
+            <input type="password" name="password" required autocomplete="new-password">
+        </label>
 
-  <label>
-    Confirm Password
-    <input type="password" name="confirm" required autocomplete="new-password">
-  </label>
+        <label>
+            Confirm Password
+            <input type="password" name="confirm" required autocomplete="new-password">
+        </label>
 
-  <button type="submit" class="btn">Register</button>
-</form>
+        <button type="submit" class="btn">Register</button>
+    </form>
 
-<p>Already have an account? <a href="/skillswap/login.php">Login here</a></p>
+    <p class="login-link">Already have an account? <a href="/skillswap/login.php">Login here</a></p>
+</div>
 
 <?php include 'includes/footer.php'; ?>
-
-<link rel="stylesheet" href="/skillswap/assets/css/index.css">
-<link rel="stylesheet" href="/skillswap/assets/css/footer.css">
 <link rel="stylesheet" href="/skillswap/assets/css/register.css">
+<link rel="stylesheet" href="/skillswap/assets/css/footer.css">
