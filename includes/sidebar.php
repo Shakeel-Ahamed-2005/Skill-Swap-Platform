@@ -38,6 +38,9 @@ $user_name = htmlspecialchars($_SESSION['user_name']);
         <a href="/skillswap/swap_requests.php" class="<?php echo basename($_SERVER['PHP_SELF']) == 'swap-requests.php' ? 'active' : ''; ?>">
             <i class="fas fa-exchange-alt"></i> Swap Requests
         </a>
+        <a href="/skillswap/my_sent_requests.php" class="<?php echo basename($_SERVER['PHP_SELF']) == 'my_sent_requests.php' ? 'active' : ''; ?>">
+            <i class="fas fa-paper-plane"></i> My Sent Requests
+        </a>
         <a href="/skillswap/best_matches.php" class="<?php echo basename($_SERVER['PHP_SELF']) == 'best-matches.php' ? 'active' : ''; ?>">
             <i class="fas fa-star"></i> Best Matches
         </a>
